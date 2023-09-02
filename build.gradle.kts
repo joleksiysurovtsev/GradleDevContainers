@@ -48,4 +48,4 @@ scmVersion {
 }
 
 group = "o.sur"
-version = scmVersion.version
+version = 1

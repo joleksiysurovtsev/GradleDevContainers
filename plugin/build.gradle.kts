@@ -4,6 +4,9 @@ plugins {
     id("org.jetbrains.kotlin.jvm") version "1.9.10"
 }
 
+group = "o.sur"
+version = "${parent?.version}"
+
 repositories {
     gradlePluginPortal()
     google()
@@ -42,7 +45,7 @@ testing {
 
 gradlePlugin {
     val greeting by plugins.creating {
-        id = "o.sur.gradledevcontainers.greeting"
+        id = "o.sur.gradledevcontainers"
         implementationClass = "o.sur.gradledevcontainers.GradleDevContainersPlugin"
     }
 }
@@ -62,6 +65,19 @@ gradlePlugin {
         }
     }
 }
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions {
+        freeCompilerArgs = listOf("-Xjsr305=strict")
+        jvmTarget = "17"
+    }
+}
+
+tasks.withType<JavaCompile> {
+    sourceCompatibility = "17"
+    targetCompatibility = "17"
+}
+
 
 publishing {
     publications {

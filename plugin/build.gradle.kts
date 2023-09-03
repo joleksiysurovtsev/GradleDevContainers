@@ -2,6 +2,7 @@ plugins {
     `java-gradle-plugin`
     `maven-publish`
     id("org.jetbrains.kotlin.jvm") version "1.9.10"
+    id("com.gradle.plugin-publish") version "1.2.1"
 }
 
 group = "o.sur"
@@ -43,27 +44,10 @@ testing {
     }
 }
 
-gradlePlugin {
-    val greeting by plugins.creating {
-        id = "o.sur.gradledevcontainers"
-        implementationClass = "o.sur.gradledevcontainers.GradleDevContainersPlugin"
-    }
-}
-
 gradlePlugin.testSourceSets(sourceSets["functionalTest"])
 
 tasks.named<Task>("check") {
     dependsOn(testing.suites.named("functionalTest"))
-}
-
-gradlePlugin {
-    plugins {
-        create("CombinedPlugin") {
-            id = "o.sur.plugins.dev-containers"
-            implementationClass = "o.sur.gradledevcontainers.GradleDevContainersPlugin"
-            description = "TODO()"
-        }
-    }
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
@@ -77,7 +61,6 @@ tasks.withType<JavaCompile> {
     sourceCompatibility = "17"
     targetCompatibility = "17"
 }
-
 
 publishing {
     publications {
@@ -94,6 +77,21 @@ publishing {
                 username = "username"
                 password = "password"
             }
+        }
+    }
+}
+
+gradlePlugin {
+    website.set("https://github.com/joleksiysurovtsev/GradleDevContainers")
+    vcsUrl.set("https://github.com/joleksiysurovtsev/GradleDevContainers")
+    plugins {
+        create("DevContainersPlugin") {
+            id = "o.sur.gradledevcontainers"
+            implementationClass = "o.sur.gradledevcontainers.GradleDevContainersPlugin"
+            displayName = "Dev Containers Plugin for Kafka and Zookeeper"
+            description = "A Gradle plugin to automate the deployment of Kafka and Zookeeper containers using Docker. It handles container creation, initialization, and network setup."
+            tags.set(listOf("kafka", "docker"))
+            version = project.version.toString()
         }
     }
 }

@@ -89,7 +89,7 @@ gradlePlugin {
     plugins {
         create("DevContainersPlugin") {
             id = "github.io.surovtsev.gradle-dev-containers-starter"
-            implementationClass = "github.io.o.surovtsev.gradledevcontainers.GradleDevContainersPlugin"
+            implementationClass = "github.io.surovtsev.gradledevcontainers.GradleDevContainersPlugin"
             displayName = "Dev Containers Plugin for Kafka and Zookeeper"
             description = """
                 |A Gradle plugin to automate the deployment of Kafka and Zookeeper containers using Docker. 

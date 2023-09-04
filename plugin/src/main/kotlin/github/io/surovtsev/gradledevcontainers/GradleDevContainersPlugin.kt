@@ -6,7 +6,7 @@ import org.gradle.api.Project
 
 class GradleDevContainersPlugin : Plugin<Project> {
     override fun apply(project: Project) {
-        project.tasks.register("RUN_KAFKA") { task ->
+        project.tasks.register("runKafkaCluster") { task ->
             task.group = "DevContainersPlugin"
             task.doLast { KafkaComposeRunner.runKafkaBundle() }
         }

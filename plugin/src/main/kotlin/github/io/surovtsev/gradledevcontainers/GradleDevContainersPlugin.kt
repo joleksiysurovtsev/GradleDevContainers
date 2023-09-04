@@ -1,6 +1,6 @@
-package o.sur.gradledevcontainers
+package github.io.surovtsev.gradledevcontainers
 
-import o.sur.gradledevcontainers.kafka.KafkaComposeRunner
+import github.io.surovtsev.gradledevcontainers.kafka.KafkaComposeRunner
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 

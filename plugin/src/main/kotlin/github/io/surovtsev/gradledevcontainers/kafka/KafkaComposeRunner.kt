@@ -1,9 +1,9 @@
-package o.sur.gradledevcontainers.kafka
+package github.io.surovtsev.gradledevcontainers.kafka
 
 import com.github.dockerjava.api.command.LogContainerCmd
 import com.github.dockerjava.api.model.Frame
 import com.github.dockerjava.core.command.LogContainerResultCallback
-import o.sur.gradledevcontainers.PluginDockerClient
+import github.io.surovtsev.gradledevcontainers.PluginDockerClient
 import java.util.concurrent.CountDownLatch
 
 object KafkaComposeRunner {

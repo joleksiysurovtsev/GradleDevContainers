@@ -1,4 +1,4 @@
-package o.sur.gradledevcontainers.kafka
+package github.io.surovtsev.gradledevcontainers.kafka
 
 import com.github.dockerjava.api.command.CreateContainerResponse
 

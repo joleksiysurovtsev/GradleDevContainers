@@ -5,7 +5,7 @@ plugins {
     id("com.gradle.plugin-publish") version "1.2.1"
 }
 
-group = "o.sur"
+group = "github.io"
 version = "${parent?.version}"
 
 repositories {
@@ -88,10 +88,14 @@ gradlePlugin {
     vcsUrl.set("https://github.com/joleksiysurovtsev/GradleDevContainers")
     plugins {
         create("DevContainersPlugin") {
-            id = "o.sur.gradledevcontainers"
-            implementationClass = "o.sur.gradledevcontainers.GradleDevContainersPlugin"
+            id = "github.io.surovtsev.gradle-dev-containers-starter"
+            implementationClass = "github.io.o.surovtsev.gradledevcontainers.GradleDevContainersPlugin"
             displayName = "Dev Containers Plugin for Kafka and Zookeeper"
-            description = "A Gradle plugin to automate the deployment of Kafka and Zookeeper containers using Docker. It handles container creation, initialization, and network setup."
+            description = """
+                |A Gradle plugin to automate the deployment of Kafka and Zookeeper containers using Docker. 
+                |It handles container creation, initialization, and network setup.
+                |With each new version, new containers and tasks will be added
+                |""".trimMargin()
             tags.set(listOf("kafka", "docker"))
             version = project.version.toString()
         }

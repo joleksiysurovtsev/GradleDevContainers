@@ -1,4 +1,4 @@
-package o.sur.gradledevcontainers
+package github.io.surovtsev.gradledevcontainers
 
 import com.github.dockerjava.api.DockerClient
 import com.github.dockerjava.core.DefaultDockerClientConfig

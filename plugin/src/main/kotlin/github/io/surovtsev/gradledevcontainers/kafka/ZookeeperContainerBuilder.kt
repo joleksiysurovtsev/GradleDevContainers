@@ -1,10 +1,10 @@
-package o.sur.gradledevcontainers.kafka
+package github.io.surovtsev.gradledevcontainers.kafka
 
 import com.github.dockerjava.api.command.CreateContainerResponse
 import com.github.dockerjava.api.model.HostConfig
 import com.github.dockerjava.api.model.PortBinding
-import o.sur.gradledevcontainers.PluginDockerClient
-import o.sur.gradledevcontainers.utils.ConfigLoader
+import github.io.surovtsev.gradledevcontainers.PluginDockerClient
+import github.io.surovtsev.gradledevcontainers.utils.ConfigLoader
 
 class ZookeeperContainerBuilder : ContainerBuilder {
 
